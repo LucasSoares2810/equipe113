@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Roboto, Arial, sans-serif;
+}
+
+
+
+
+.conteiner{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    padding: 20px 0;
+}
+
+.topo{
+    background-color: #7159c1;
+    display: flex;
+    margin: 5px;
+    border-radius: 5px;
+    
+}
+
+
+
+.logo{
+    display: block;
+    margin-right: auto;
+    margin: 5px;
+}
+
+.barra{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px
+}
+
+.login{
+    display: block;
+    margin-left: auto;
+    margin: 15px;
+}
+
+.menu{
+    background-color: #7159c1;
+    display: flex;
+    width: 99%;
+    margin: 5px;
+    padding: 18px 8%;
+    float: left;
+    border-radius: 5px;
+}
+
+.menu li{
+    float: left;
+}
+
+.menu li a{
+
+    margin-right: 100px;
+}
+
+
+
+.main{
+    display: flex;
+    margin: 5px;
+    height: 800px;
+}
+
+.categoria{
+    background-color: #7159c1;
+    width: 30%;
+    border: 3px solid black;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.principal{
+    background-color: #7159c1;
+    width: 100%;
+    border: 3px solid black;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+footer{
+    background-color: #7159c1;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+
+/* CSS DA PAGINA DO CADASTRO*/
+
+.cadastro{
+    border: 1px solid black;
+    height: 500px;
+    margin: 5px;
+}
