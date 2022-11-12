@@ -1,8 +1,12 @@
 
 <?php
+
+
     if(isset($_FILES['myfile'])){
         $arquivo = $_FILES['myfile'];
-        
+
+        var_dump($arquivo);
+
         if($arquivo['error']){
             die("Falha ao enviar o arquivo");
         }
@@ -11,25 +15,25 @@
             die("Arquivo maior que 2MB");
         }
 
-        $pasta = "arquivos/";
-        $nomeDoArquivo = $_FILES['name'];
-        $novoNomeArquivo = uniqid();
-        $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
-        echo "<p>$extensao</p>";
-
-        if($extensao != "jpeg" && $extensao != "png"){
-            die("Tipo de arquivo não aceito");
-        }
-
-        $deuCerto = move_uploaded_file($arquivo["tpm_name"], $pasta . $novoNomeArquivo . "." . $extensao);
-        
-        if($deuCerto){
-            echo "<p>Arqhivo enviado com sucesso! Para acessa-lo clique aqui:<a href=\'arquivos/$novoNomeArquivo.$extensao'\>Clique aqui</a></p>";
-        }
-        else{
-            echo "<p>Falha ao enviar o arquivo</p>";
+        $uploaddir = '/var/www/html/arquivos/';
+        $uploadfile = $uploaddir . basename($_FILES['myfile']['name']);
+    
+        echo "<p>";
+    
+        if (move_uploaded_file($_FILES['myfile']["tmp_name"], $uploadfile)) {
+            echo "File is valid, and was successfully uploaded.\n";
+            
+        } 
+        else {
+            echo "Upload failed";
+            echo $uploadfile;
         }
     
+        echo "</p>";
+        echo '<pre>';
+        echo 'Here is some more debugging info:';
+        print_r($_FILES);
+        print "</pre>";
     }
 
 
@@ -80,7 +84,7 @@
 
         <main class="cadastro">
             <div class="box">
-                <form enctype="multipart/form-data" method="POST">
+                <form enctype="multipart/form-data" method="POST" action="cadastro_produto.php">
                     <fieldset>
                         <legend><b> Cadastro do Produto </b></legend>
                         <br>
